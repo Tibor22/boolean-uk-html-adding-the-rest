@@ -27,6 +27,7 @@ $padding-rooms: 0.5rem;
   grid-template-columns: auto auto 1fr auto;
   min-height: 100vh;
   .left-side-iconbar {
+    grid-column: 1/2;
     grid-template-columns: 1/2;
     background-color: rgb(230, 224, 224);
     padding: 0.3rem;
@@ -70,6 +71,7 @@ $padding-rooms: 0.5rem;
   }
 
   .rooms {
+    grid-column: 2/3;
     display: grid;
     grid-template-rows: repeat(6, auto) 1fr;
     position: relative;
@@ -186,6 +188,12 @@ $padding-rooms: 0.5rem;
     }
   }
 
+  .main {
+    grid-column: 3/5;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .main-feed {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -196,12 +204,14 @@ $padding-rooms: 0.5rem;
       height: 3.3rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: $padding-rooms;
     }
 
     &-main {
       background-color: rgb(255, 255, 255);
       padding: $padding-rooms;
+
       .big-icon {
         width: 40px;
         height: 40px;
@@ -231,8 +241,40 @@ $padding-rooms: 0.5rem;
 
     &-footer {
       height: 60px;
-      background-color: rgb(209, 201, 201);
+      background-color: rgb(255, 255, 255);
       padding: $padding-rooms;
+
+      &-message {
+        height: 2.1rem;
+        background-color: rgb(230, 221, 221);
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 1rem;
+        .icon-1 {
+          border: 1px solid black;
+        }
+      }
+      .footer-icons {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .icon-nav {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    gap: 0.7rem;
+    min-width: 230px;
+
+    height: 3.3rem;
+    li {
+      list-style-type: none;
+    }
+    .search {
+      width: 10rem;
     }
   }
 }
