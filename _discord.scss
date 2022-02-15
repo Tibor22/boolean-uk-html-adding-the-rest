@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$padding-rooms: 0.5rem;
+
+.two-column-grid__extend-one {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.icon {
+  border: 1px solid black;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-wrapper {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  min-height: 100vh;
+  .left-side-iconbar {
+    grid-template-columns: 1/2;
+    background-color: rgb(230, 224, 224);
+    padding: 0.3rem;
+    li {
+      position: relative;
+      list-style-type: none;
+      padding: 0.6rem;
+      margin: 0.5rem;
+      border-radius: 50%;
+      background-color: white;
+      border: 2px dotted green;
+
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+      &:last-child {
+        margin-top: 1rem;
+      }
+
+      &:first-child::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        background-color: rgb(116, 113, 113);
+      }
+      &:last-child::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        background-color: rgb(121, 120, 120);
+      }
+    }
+  }
+
+  .rooms {
+    display: grid;
+    grid-template-rows: repeat(6, auto) 1fr;
+    position: relative;
+    width: 16rem;
+    background-color: rgb(240, 229, 229);
+    &-header {
+      height: 3.3rem;
+      padding: $padding-rooms;
+      border-bottom: 1px solid rgb(185, 179, 179);
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: $padding-rooms;
+      justify-items: center;
+      border-bottom: 1px solid rgb(185, 179, 179);
+
+      &-invite {
+        grid-template-columns: 1/2;
+        display: grid;
+        text-align: center;
+
+        justify-items: center;
+
+        &__img {
+          margin-bottom: 0.4rem;
+          height: 40px;
+          width: 40px;
+        }
+        &__text {
+          width: 150px;
+          margin-bottom: 0.4rem;
+        }
+
+        &__btn {
+          height: 40px;
+          width: 100px;
+          margin-bottom: 0.4rem;
+        }
+      }
+
+      .icon {
+        align-self: start;
+      }
+    }
+
+    .general {
+      padding: 0px 0.5rem 0.5rem 3px;
+      .general-heading {
+        margin-top: 1rem;
+        display: grid;
+      }
+      .general-menu {
+        padding: $padding-rooms;
+        li {
+          list-style-type: none;
+        }
+      }
+      margin-bottom: 0.4rem;
+    }
+    .classes {
+      padding: 0px 0.5rem 0.5rem 3px;
+      .classes-heading {
+        display: grid;
+      }
+      .classes-menu {
+        padding: $padding-rooms;
+        li {
+          list-style-type: none;
+        }
+      }
+      margin-bottom: 0.4rem;
+    }
+    .lobby {
+      padding: 0px 0.5rem 0.5rem 3px;
+      .lobby-heading {
+        display: grid;
+      }
+      .lobby-menu {
+        padding: $padding-rooms;
+        li {
+          list-style-type: none;
+        }
+      }
+      margin-bottom: 0.4rem;
+    }
+    .staff {
+      padding: 0px 0.5rem 0.5rem 3px;
+      .staff-heading {
+        display: grid;
+      }
+      .staff-menu {
+        padding: $padding-rooms;
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+
+    .profile-bottom {
+      display: grid;
+      align-items: end;
+
+      &-wrapper {
+        display: grid;
+        align-content: end;
+        grid-template-columns: auto 1fr auto;
+        padding: $padding-rooms;
+        .name {
+          justify-self: center;
+        }
+      }
+    }
+  }
+
+  .main-feed {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: end;
+
+    &-header {
+      border-bottom: 1px solid rgb(177, 171, 171);
+      height: 3.3rem;
+      display: flex;
+      align-items: center;
+      padding: $padding-rooms;
+    }
+
+    &-main {
+      background-color: rgb(255, 255, 255);
+      padding: $padding-rooms;
+      .big-icon {
+        width: 40px;
+        height: 40px;
+      }
+      p {
+        margin-bottom: 0.4rem;
+      }
+      .images {
+        width: auto;
+        height: 20px;
+      }
+      .message {
+        border-top: 1px solid rgb(177, 173, 173);
+        padding-top: 1rem;
+        margin-top: 1.4rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .chat {
+          &-container {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      height: 60px;
+      background-color: rgb(209, 201, 201);
+      padding: $padding-rooms;
+    }
+  }
+}
